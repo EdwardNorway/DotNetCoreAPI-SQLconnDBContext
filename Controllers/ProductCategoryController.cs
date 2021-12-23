@@ -167,6 +167,69 @@ namespace DotNetCoreAPI.Controllers
 
 
          //   Delete(id);
+         // (1) use .FromSqlRaw to execute SQL-Statements  ::
+         // (2) use SQLClient lib to do it ::
+         // (3) use => Leveraging ADO.NET via the Context.Database property
+         // https://www.learnentityframeworkcore.com/raw-sql
+
+          Console.WriteLine("------------------\n");
+
+            var _items = _context.DimProductCategory.FromSqlRaw("SELECT *  FROM [AdventureWorksDW2012].[dbo].[DimProductCategory] WHERE ProductCategoryKey = 10").ToList();
+            foreach (var _item in _items)
+            {
+                Console.WriteLine("No paramters: {0} {1}", _item.ProductCategoryKey.ToString(), _item.EnglishProductCategoryName);
+            }
+            Console.WriteLine("------------------\n");
+
+             var _items2 = _context.DimProductCategory.FromSqlRaw("SELECT *  FROM [AdventureWorksDW2012].[dbo].[DimProductCategory]")
+                        .Select(b => new {
+                            Key = b.ProductCategoryKey,
+                            Name = b.EnglishProductCategoryName 
+                            }).ToList();
+
+             foreach (var _item in _items2)
+            {
+                Console.WriteLine("Rename Columns: {0} {1}", _item.Key.ToString(), _item.Name);
+            }
+
+            Console.WriteLine("------------------\n");
+             var _items3 = _context.DimProductCategory.FromSqlRaw("SELECT *  FROM [AdventureWorksDW2012].[dbo].[DimProductCategory]")
+                        .Select(b => new {
+                            Key = b.ProductCategoryKey,
+                            Name = b.EnglishProductCategoryName 
+                            })
+                        .Where(b => b.Key == id).ToList();
+
+             foreach (var _item in _items3)
+            {
+                Console.WriteLine("Have Parameters: {0} {1}", _item.Key.ToString(), _item.Name);
+            }
+            Console.WriteLine("------------------\n");
+
+            /**                             c# loop through json object
+              //Console.WriteLine("Hello World!");
+            String json = @"[{ 'Header1' : 'Value1', 'Header2' : 'Value 2', 'Header3': 'Value 3' }, 
+                            { 'Header1' : 'Value1', 'Header2' : 'Value 2', 'Header3': 'Value 3' }]";
+
+            List<EmpJsonModel> list = JsonConvert.DeserializeObject<List<EmpJsonModel>>(json);
+            foreach (EmpJsonModel model in list)
+            {
+                Console.WriteLine("field0: " + model.Header1 );
+                Console.WriteLine("field1: " + model.Header2 );
+                Console.WriteLine("field2: " + model.Header3 );
+            }
+            Console.WriteLine("------------------");
+
+            ChatResponse response = JsonConvert.DeserializeObject<ChatResponse>(json);
+            foreach (var message in response.chat)
+            {
+                rtbChat.AppendText($"{message.author}: {message.content}\n");
+            }
+
+            var list = JsonConvert.DeserializeObject<List<MyItem>>(json);
+
+            **/
+
 
            /*  var contextDelete =  new ProductSubcategoryDeleteContext();
                 var _productCategoryKey = contextDelete.DimProductCategoryView.FirstOrDefaultAsync(a => a.ProductCategoryKey == id);
@@ -222,6 +285,21 @@ namespace DotNetCoreAPI.Controllers
             try 
             { 
                 if (productCategoryId < 1) return;
+
+              /*   using (var context2 = new ProductCategoryContext())
+                {
+                    var books = context2.DimProductCategory.FromSqlRaw("SELECT BookId, Title, AuthorId, Isbn FROM Books").ToList();
+                } 
+                
+                   var books = _context.DimProductCategory.FromSqlRaw("SELECT *  FROM [AdventureWorksDW2012].[dbo].[DimProductCategory] WHERE ProductCategoryKey = 10").ToList();
+                 foreach (var _item in books)
+                {
+                    Console.WriteLine("{0} {1}", _item.ProductCategoryKey.ToString(), _item.EnglishProductCategoryName);
+                }
+
+                */
+
+              
 
                 SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
 
