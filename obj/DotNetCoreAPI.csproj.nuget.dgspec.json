@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\deng\\Downloads\\DotNetCoreAPI-SQLconnectionDBContext-Test\\DotNetCoreAPI.csproj": {}
+    "C:\\Users\\deng\\Downloads\\DotNetCoreAPI-SQLconnDBContext\\DotNetCoreAPI.csproj": {}
   },
   "projects": {
-    "c:\\Users\\deng\\Downloads\\DotNetCoreAPI-SQLconnectionDBContext-Test\\DotNetCoreAPI.csproj": {
+    "C:\\Users\\deng\\Downloads\\DotNetCoreAPI-SQLconnDBContext\\DotNetCoreAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\deng\\Downloads\\DotNetCoreAPI-SQLconnectionDBContext-Test\\DotNetCoreAPI.csproj",
+        "projectUniqueName": "C:\\Users\\deng\\Downloads\\DotNetCoreAPI-SQLconnDBContext\\DotNetCoreAPI.csproj",
         "projectName": "DotNetCoreAPI",
-        "projectPath": "c:\\Users\\deng\\Downloads\\DotNetCoreAPI-SQLconnectionDBContext-Test\\DotNetCoreAPI.csproj",
+        "projectPath": "C:\\Users\\deng\\Downloads\\DotNetCoreAPI-SQLconnDBContext\\DotNetCoreAPI.csproj",
         "packagesPath": "C:\\Users\\deng\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\deng\\Downloads\\DotNetCoreAPI-SQLconnectionDBContext-Test\\obj\\",
+        "outputPath": "C:\\Users\\deng\\Downloads\\DotNetCoreAPI-SQLconnDBContext\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

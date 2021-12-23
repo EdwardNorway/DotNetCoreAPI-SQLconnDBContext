@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IGXU3VE8aF+9vwcAM21HVpti2JUM6ud1KrXnRAc2VkKg5kC6gIjnxCtZw2IIYpEdwwkSIhn4SG4OkvZsSUnK8g==",
+  "dgSpecHash": "UU+dd0RF6MP5CLqjm644+hdsACqwpQVjsMAKJ5Pb3QJIV9sLmDogG24vOzon7GA1F0G7wFqvO4SEReMXCgOvxA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\deng\\Downloads\\DotNetCoreAPI-SQLconnectionDBContext-Test\\DotNetCoreAPI.csproj",
+  "projectFilePath": "C:\\Users\\deng\\Downloads\\DotNetCoreAPI-SQLconnDBContext\\DotNetCoreAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\deng\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\deng\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
